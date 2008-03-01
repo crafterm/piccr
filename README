@@ -1,15 +1,25 @@
 Welcome to Piccr
 ================
 
-Piccr is a Flickr style photo upload web application built in 24 hours by Marcus Crafter and Lachlan Hardy at Railscamp 2.0, in Bacchus Marsh, Australia, 2007.
+Piccr is a Flickr style photo upload web application built in 24 hours by
+Marcus Crafter and Lachlan Hardy at Railscamp 2.0, in Bacchus Marsh,
+Australia, 2007.
 
-Railscamp is a weekend where Rails and related technology aficionados gather for 2 days of solid hacking, partying, guitar hero and general fun.
+Railscamp is a weekend where Rails and related technology aficionados gather
+for 2 days of solid hacking, partying, guitar hero and general fun.
 
-The past two events have been in camp sites with no internet access at all, and this has sparked a bunch of sites to be built, Piccr was created so that people during the camp could upload any photos they'd like, taken during the camp, for all to see.
+The past two events have been in camp sites with no internet access at all,
+and this has sparked a bunch of sites to be built, Piccr was created so that
+people during the camp could upload any photos they'd like, taken during the
+camp, for all to see.
 
-Piccr offers a forms and REST based API for uploading content which others have also taken advantage of, during Railscamp Lachie Cox built a Cocoa frontend that would let you submit photos via your Mac's inbuilt iSight at a touch of a button.
+Piccr offers a forms and REST based API for uploading content which others
+have also taken advantage of, during Railscamp Lachie Cox built a Cocoa
+frontend that would let you submit photos via your Mac's inbuilt iSight at a
+touch of a button.
 
-It's a small Rails app, but please feel free to hack it, any patches more than welcome! Enjoy
+It's a small Rails app, but please feel free to hack it, any patches more
+than welcome! Enjoy!
 
 --
 Marcus Crafter <crafterm@redartisan.com>
