@@ -1,0 +1,9 @@
+<% form_tag sessions_path, :id => 'login' do -%>
+  <fieldset>
+    <label for="username">
+      <span>Login</span>
+      <%= text_field_tag :username %>
+    </label>
+  </fieldset>
+  <%= submit_tag 'Log in', :disable_with => "Logging in&hellip;", :class => 'submit' %></p>  
+<% end -%>

@@ -1,0 +1,10 @@
+<% @page_title = "With Love From RailsCamp"%>
+<% @body_class = "home" %>
+
+<% content_for :top do %>
+  <h1><%= image_tag 'logo-piccr.jpg', :size => '207x47', :alt => "Piccr." %></h1>
+<% end %>
+
+<%= render :partial => 'photo', :collection => @photos %>
+
+<%= will_paginate @photos %>

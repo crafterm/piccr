@@ -1,0 +1,53 @@
+<% @page_title = @photo.description %>
+<% @body_class = 'photo' %>
+
+<!-- <h2><%=h @photo.filename %></h2> -->
+
+<%= image_tag @photo.public_filename %>
+
+<h1><%=h @photo.description %></h1>
+
+<ul id="progress-nav">
+<% if @next_photo -%>
+  <li>Previous: <%= link_to image_tag(@next_photo.public_filename(:tiny)), @next_photo %></li>
+<% else %>
+  <li>No previous images</li>
+<% end -%>
+
+  <li><%= image_tag 'current-image-arrow.jpg', :size => '113x75', :alt => " " %></li>
+
+<% if @previous_photo -%>
+  <li>Next: <%= link_to image_tag(@previous_photo.public_filename(:tiny)), @previous_photo %></li>
+<% else %>
+  <li>No more images to view</li>
+<% end -%>
+</ul> <!-- // #progress-nav -->
+
+<p><%=h @photo.uploaded_by.titleize %> uploaded this at <%=h @photo.created_at.to_s %>. It has been viewed <%=h @photo.click_count %> times and tagged as <%= @photo.tags.collect(&:name).join(' ') %>
+</p>
+
+  <div id="comments">
+    <%= render :partial => 'comments/comment', :collection => @photo.comments.sort_by(&:created_at) %>
+    <%= link_to 'Add', new_photo_comment_path(@photo) %> a comment
+  </div> <!-- // #comments -->
+
+<p><%= link_to 'Edit', edit_photo_path(@photo) %> | <%= link_to 'Back', photos_path %></p>
+
+
+
+<!--
+<p>
+  <strong>Content type:</strong>
+  <%=h @photo.content_type %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%=h number_to_human_size(@photo.size) %>
+</p>
+
+<p>
+  <strong>Dimensions:</strong>
+  <%= image_dimensions(@photo) %>
+</p>
+-->

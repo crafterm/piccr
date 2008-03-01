@@ -1,0 +1,6 @@
+<dl id="<%= 'comment_' + comment.id.to_s %>">
+  <dt><%=h comment.author.titleize %> said:</dt>
+  <dd class="datetime"><a href="/<%= 'comment_' + comment.id.to_s %>"><%=h comment.created_at.to_s(:short) %></a></dd>
+  <dd><p><%=h comment.content %></p></dd>
+</dl>
+

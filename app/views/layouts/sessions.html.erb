@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Login // Piccr</title>
+  <%= stylesheet_link_tag 'reset', 'main' %>
+  <link href="/photos.atom" rel="alternate" type="application/atom+xml" title="Piccr Photo Feed" />
+</head>
+<body <%= @body_class && %{class="#{@body_class}"} %> id="piccr">
+<div id="page">
+  <div id="header">
+    <% if top = yield(:top) %>
+      <%= top %>
+    <% else %>
+      <p id="pagetitle"><a href="/"><%= image_tag 'logo-piccr.jpg', :size => '207x47', :alt => "Piccr." %></a></p>
+  	<% end %>
+    <p id="tagline">It's for pictures.</p>
+  </div> <!-- // #header -->
+  
+  <div id="content">
+
+    <%= yield  %>
+  </div>
+    
+</div> <!-- // #page -->
+</body>
+</html>

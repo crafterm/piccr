@@ -1,0 +1,28 @@
+<% @page_title = "Share a New Pic!"%>
+
+<h1>Upload a new photo</h1>
+
+<%= error_messages_for :photo %>
+
+<% form_for @photo, :html => { :multipart => true } do |f| -%>
+  <fieldset>
+    <label for="photo_uploaded_data">
+      <span>Upload photo:</span>
+      <%= f.file_field :uploaded_data %>
+    </label>
+  
+    <label for="photo_description">
+      <span>Description:</span>
+      <%= f.text_field :description %>
+    </label>
+
+    <label for="photo_tagnames">
+      <span>Tags:</span>
+      <%= f.text_field :tagnames %>
+    </label>
+  </fieldset>
+
+  <%= f.submit "Upload", :disable_with => "Uploading&hellip;", :class => 'submit' %>
+<% end -%>
+
+<p><%= link_to 'Back', photos_path %></p>

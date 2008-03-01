@@ -1,0 +1,18 @@
+<% div_for photo do -%>
+  <dl>
+    <dt><%= link_to image_tag(photo.public_filename(:small)), photo %></dt>
+    <dd class="description"><%= photo.description %></dd>
+    <dd><%= photo.click_count %> views</dd>
+    <dd><%= link_to pluralize (photo.comments.count, 'comments'), photo_path(photo, :anchor => "comments") %></dd>
+    <dd>
+      <ul class="actions">
+        <li><%= link_to 'Show', photo %></li>
+        <li><%= link_to 'Edit', edit_photo_path(photo) %></li>
+        <% if session[:username] == 'marcus' or session[:username] == 'Lachlan Hardy' -%>
+        <li><%= link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete %></li>
+        <% end -%>
+      </ul>
+    </dd>
+  </dl>
+
+<% end -%>

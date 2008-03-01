@@ -1,0 +1,198 @@
+/****
+Webjam
+http://webjam.com.au
+20070812
+
+TOC
+- =Generic Rules
+	-- =Generic Text
+		 --- =Links
+		 --- =Headings
+		 --- =Body Text
+		 --- =Date, Times etc
+	-- =Generic Forms
+- =Structure
+	-- =Content
+	   --- =hAtom
+		 --- =Join Form
+	-- =Footer
+- =JS Enabled
+- =Scaffold Rules
+
+****/
+
+
+/* - =Generic Rules - */
+
+	/* -- =Generic Text -- */
+
+		/* --- =Links --- */
+		a:link {color: #fff;}
+		a:visited {color: #ccc;}
+		a:hover, a:active, a:focus {color: #f03e00;}
+		
+		/* --- =Headings --- */
+		h1, h2, h3, h4, h5, h6 {clear: both; margin: 0 0 0.5em;}
+		h1 {background: #212121; color: #fff; font: 300 2em Georgia, "Times New Roman", Times, serif;}
+		h2 {font-size: 1.6em;}
+		h3 {font-size: 1.5em;}
+		h4 {font-size: 1.4em;}
+		h5 {font-size: 1.2em;}
+		h6 {font-size: 1.1em;}
+		
+		/* --- =Body Text --- */
+		#content p,
+		#content li,
+		#content ol,
+		#content ul {margin: 0 0 0.5em;}
+		#content p {font-size: 1.07em;}
+		#content ul {}
+			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
+		#content ol {}
+			#content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}
+			
+		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
+
+		/* --- =Dates, Times etc --- */
+		.date {font: 1em/1.6 Georgia, serif;}
+
+	/* -- =Generic Forms -- */
+
+	form {clear: both; padding: 0 0 2em 0;}
+		fieldset {margin: 0; padding: 0;}
+			fieldset fieldset {clear: both;}
+		form label {clear: both; display: block; float: left; font-weight: bold; margin: 0 0 0.4em 0; padding: 0.5em 0 0 0; width: auto;}
+			form label span {display: block; float: left; margin: 0 0 0 0; width: 8em;}
+				form label span.note {background: transparent; clear:both; color: #565757; font: 0.86em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.5em 0 0 7em; width: auto;}
+		input {background: #e6e5e5; color: #000; float: left; margin: 0.4em 0 0 0; width: 25em;}
+		select {float: left; width: 10em;}
+		
+		label.checkbox {}
+			label.checkbox input {margin: 0.4em 0; width: auto;}
+			form label.checkbox span {margin: 0.3em 0 0 0.4em; width: auto;}
+			fieldset.buttons input,
+			input.submit {clear: both; cursor: pointer; float: right; margin: 1em 10em 0 6.4em; width: 8em;}
+
+/* - =Structure - */
+body {background: #101010; color: #fff; font: 62.5%/1.3 Arial, Helvetica, sans-serif; margin:0; padding:0;}
+	body.home {}
+	
+#page {font-size: 2.4em; margin: 0 auto 0 auto; position: relative; width: 35em;}
+	#header {background: #fff; color: #101010; padding: 0.8em;}
+
+	body.home h1,
+	#pagetitle {display: inline; margin: 0;}
+
+	#tagline {display: inline; font: 300 2em Georgia, "Times New Roman", Times, serif; left: 0.4em; position: relative; top: -3px;}
+	
+		/* -- =Content -- */
+		#content {background: #212121; color: #fff; padding: 0.8em 0.8em 2em 0.8em;}
+			
+			p.welcome {text-align: center;}
+			
+			/* --- =Index -- */
+			div.photo {border-top: 3px solid #fb9006; clear: both; margin: 0 0 1em 0; padding: 1em 0 0 0; position: relative;}
+				div.photo dl {margin: 0 0 0 330px; min-height: 200px;}
+					div.photo dt	{left: 0; position: absolute; top : 1em;}
+					div.photo dd {font-size: 0.6em;}
+					div.photo dd.description {background: #212121; clear: none; color: #fff; font: 300 1em Georgia, "Times New Roman", Times, serif;}
+						#content div.photo dd ul.actions {}
+							#content div.photo dd ul.actions li {display: inline; list-style-type: none;}
+			
+			/* --- =Photo pages --- */
+			body.photo {}
+				body.photo h1 {border-bottom: 3px solid #fb9006; margin: 0 0 0.2em 0; padding: 0.3em 0 0.4em 0;}
+				
+				/* ---- =Progress nav ---- */
+				#content #progress-nav {clear: both; margin: 0 auto; overflow: auto; text-align: center; width: 430px;}
+				 	#content #progress-nav li {float: left; list-style-type: none; margin: 0 15px 0; width: 113px;}
+					
+			
+			/* --- =Comments --- */
+			#comments {clear: both; margin: 1em 0 0; overflow: auto;}
+			#comments dl {background: #FCFCFC url('/images/bg-comments-dl.gif') repeat-x 0 0; clear: both; color: #101010; float: left; margin: 0 0 1em 0; padding: 6px 0.2em 0.2em; width: auto;}
+				#comments dt {float: left; width: 10em;}
+				#comments dd {float: right; padding: 0 0.5em 0 0; width: 23em;}
+				#comments dd.datetime {background: #FCFCFC; clear: left; color: #555; float: left; font: 100 0.8em Arial, Helvetica, sans-serif; margin: 0; width: 10em;}
+					#comments dd.datetime a:link,
+					#comments dd.datetime a:visited {background: #FCFCFC; color: #555; text-decoration: none;}
+					#comments dd.datetime a:hover,
+					#comments dd.datetime a:active,
+					#comments dd.datetime a:focus {background: #FCFCFC; color: #555; text-decoration: underline;}
+			
+			/* --- =Login --- */
+			#login {}
+				#login fieldset {display: inline;}
+					#login label input {width: 30em;}
+					#login input.submit {margin: 0; position: relative; top: -2.6em;}
+			
+		
+	/* -- =Footer -- */		
+	#footer {background: #212121; clear: both; color: #565757; font: 0.8em Arial, Helvetica, sans-serif; padding: 0 0 1em 0; text-align: center;}
+		#footer p {margin: 0 0 0.4em 0;}
+		
+
+/* - =JS enabled - */
+
+html.js {}
+
+
+/* - =Scaffold rules - need to be folded in - */
+
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+

@@ -1,0 +1,22 @@
+<% @page_title = "Edit the pic: " + @photo.description %>
+
+<h1>Update photo</h1>
+
+<%= error_messages_for :photo %>
+
+<% form_for @photo do |f| -%>
+  <fieldset>
+    <label for="photo_description">
+      <span>Description:</span>
+      <%= f.text_field :description %>
+    </label>  
+
+    <label for="photo_tagnames">
+      <span>Tags:</span>
+      <%= f.text_field :tagnames %>
+    </label>  
+  </fieldset>
+  <%= f.submit "Update", :disable_with => "Update&hellip;", :class => 'submit' %>
+<% end -%>
+
+<p><%= link_to 'Back', photos_path %></p>
